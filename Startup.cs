@@ -22,6 +22,12 @@ namespace CarterAPI
         {
             app.UseRouting();
 
+            app.UseSwaggerUI(opt =>
+            {
+                opt.RoutePrefix = "openapi/ui";
+                opt.SwaggerEndpoint("/openapi", "Carter OpenAPI Sample");
+            });
+
             app.UseEndpoints(endpoints => endpoints.MapCarter());
         }
     }
